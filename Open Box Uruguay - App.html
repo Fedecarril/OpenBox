@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Open Box Uruguay</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1b33;--amber:#ffb81c;--bg:#f4f6fa;--sf:#fff;--tx:#0f1b33;--mu:#5d6a82;--ln:#dfe4ee;--A:#1f9d63;--B:#2f6fdd;--C:#c97a00;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1122;--sf:#131f38;--tx:#eef2fa;--mu:#9aa8c4;--ln:#26365a;--navy:#070d1b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1122;--sf:#131f38;--tx:#eef2fa;--mu:#9aa8c4;--ln:#26365a;--navy:#070d1b;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer;border:0}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.w{max-width:1160px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:20;background:var(--sf);border-bottom:1px solid var(--ln)}
+.bar{display:flex;align-items:center;gap:14px;padding:10px 0;flex-wrap:wrap}
+.logo{font:800 22px 'Bricolage Grotesque';text-decoration:none;color:var(--tx)}.logo b{background:var(--navy);color:var(--amber);padding:2px 8px;border-radius:6px}
+.sr{flex:1;min-width:180px;display:flex;border:1.5px solid var(--ln);border-radius:10px;overflow:hidden;background:var(--bg)}
+.sr input{flex:1;border:0;background:none;padding:9px 12px;min-width:0}.sr button{background:var(--amber);color:#0f1b33;padding:0 14px;font-weight:600}
+nav{display:flex;gap:2px;flex-wrap:wrap}nav a{color:var(--mu);text-decoration:none;padding:7px 11px;border-radius:8px;font-weight:500}nav a:hover,nav a.on{color:var(--tx);background:var(--bg)}
+.btn{background:var(--amber);color:#0f1b33;font-weight:700;padding:11px 20px;border-radius:10px;display:inline-block;text-decoration:none}
+.btn.d{background:var(--navy);color:#fff}.btn.o{background:none;border:1.5px solid var(--ln);color:var(--tx)}.btn.s{padding:7px 12px;font-size:14px}
+.hero{background:var(--navy);color:#fff;padding:56px 0}.hero .w{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(34px,5vw,58px);font-weight:800}.hero p{color:#b9c4dc;font-size:18px;max-width:48ch;margin:16px 0 24px}
+.big{font-size:130px;text-align:center;background:var(--amber);border-radius:24px;padding:24px;transform:rotate(3deg)}
+section{padding:40px 0}.hd{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px;gap:10px;flex-wrap:wrap}.hd h2{font-size:clamp(24px,3vw,32px)}.hd p{margin:4px 0 0;color:var(--mu)}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.cat{background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:18px;text-align:center;text-decoration:none;color:var(--tx);font-weight:600}.cat span{display:block;font-size:34px}.cat:hover{border-color:var(--amber)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.ph{aspect-ratio:1.1;display:grid;place-items:center;font-size:60px;background:var(--bg);position:relative;border:0;width:100%}
+.bd{display:inline-block;font-weight:700;font-size:12px;padding:2px 9px;border-radius:99px;background:var(--c);color:#fff}.ph .bd{position:absolute;top:10px;left:10px}
+.A{--c:var(--A)}.B{--c:var(--B)}.C{--c:var(--C)}
+.in{padding:13px;display:flex;flex-direction:column;gap:3px;flex:1}.in h3{font:600 16px Figtree}.mu{color:var(--mu);font-size:14px}
+.pr{font:800 21px 'Bricolage Grotesque'}
+.box{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:22px}
+.lay{display:grid;grid-template-columns:230px 1fr;gap:22px;align-items:start}
+label.f{display:grid;gap:4px;font-weight:600;font-size:14px;margin-bottom:12px}
+.f input,.f select,.f textarea{border:1.5px solid var(--ln);border-radius:10px;padding:10px 12px;background:var(--bg);width:100%;font-weight:400}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.li{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--ln);flex-wrap:wrap}.li .t{font-size:34px;width:56px;height:56px;display:grid;place-items:center;background:var(--bg);border-radius:12px}.li .x{flex:1;min-width:160px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.val{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.msg{background:color-mix(in srgb,var(--amber) 22%,var(--sf));border:1px solid var(--amber);border-radius:12px;padding:12px 16px;margin:16px 0}
+.emp{text-align:center;color:var(--mu);padding:36px 0}
+footer{background:var(--navy);color:#b9c4dc;padding:30px 0;margin-top:30px;font-size:14px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,90px);background:var(--navy);color:#fff;padding:11px 18px;border-radius:12px;border-left:4px solid var(--amber);transition:.3s;z-index:50}.toast.on{transform:translate(-50%,0)}
+@media(max-width:820px){.hero .w,.lay,.two,.val{grid-template-columns:1fr}.big{font-size:80px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="w"><div class="bar">
+<a class="logo" href="#inicio"><b>OPEN BOX</b> Uruguay</a>
+<form class="sr" id="sf"><input id="q" type="search" placeholder="Buscar productos" aria-label="Buscar"><button>Buscar</button></form>
+<nav id="nav" aria-label="Principal"></nav></div></div></header>
+<main id="app"></main>
+<footer><div class="w">© 2026 Open Box Uruguay · Tecnología con garantía a mejor precio</div></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ===== Núcleo: datos y utilidades ===== */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=n=>'$U '+Number(n||0).toLocaleString('es-UY');
+const G={A:'Como nuevo',B:'Buen estado',C:'Caja abierta'};
+const CATS=[['Audio','🎧'],['Computación','💻'],['Celulares','📱'],['Wearables','⌚'],['Hogar','🏠'],['Gaming','🎮']];
+const emo=c=>(CATS.find(x=>x[0]===c)||[0,'📦'])[1];
+let db=null,uid=null,dl=null;
+const S={all:[],profile:null,orders:[],mine:[],q:'',cat:'',gr:'',sort:'new',sel:null,edit:null,ready:false,offline:false};
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2400)}
+const items=()=>S.all.flatMap(d=>(d.items||[]).filter(i=>i.status!=='pausado').map(i=>({...i,sid:d.uid,seller:d.seller||'Vendedor'})));
+const isSeller=()=>S.profile&&S.profile.role!=='comprador';
+const isBuyer=()=>S.profile&&S.profile.role!=='vendedor';
+const guard=async f=>{try{await f()}catch(e){toast('No se pudo guardar: '+(e.message||e.code||'error'))}};
+async function saveProfile(p){await guard(async()=>{await db.doc('data/users/'+uid+'/profile').set(p);toast('Perfil guardado')})}
+async function saveItems(arr){await guard(async()=>{await db.doc('listings/'+uid).set({seller:S.profile.name,items:arr});toast('Cambios guardados')})}
+async function saveOrders(arr){await db.doc('data/users/'+uid+'/orders').set({list:arr})}
+
+/* ===== Componentes ===== */
+function card(x){return `<article class="card"><button class="ph" data-open="${esc(x.sid)}|${esc(x.id)}" aria-label="Ver ${esc(x.title)}">${x.emoji||emo(x.cat)}<span class="bd ${x.grade}">Grado ${x.grade}</span></button><div class="in"><h3>${esc(x.title)}</h3><span class="mu">${esc(x.cat)} · ${esc(x.seller)}</span><div class="pr">${fmt(x.price)}</div><button class="btn d s" data-open="${esc(x.sid)}|${esc(x.id)}" style="margin-top:8px">Ver detalle</button></div></article>`}
+const needDb=()=>S.offline?`<div class="msg">Para guardar tus datos abrí esta página con tu cuenta de Claude. Mientras tanto podés mirar el sitio.</div>`:''
+const gate=()=>!S.ready?'<p class="emp">Cargando…</p>':!S.profile?`<div class="box emp"><h2>Primero creá tu cuenta</h2><p>Necesitás registrarte como comprador o vendedor.</p><a class="btn" href="#registro">Registrarme</a></div>`:null;
+
+/* ===== Páginas ===== */
+const Pages={
+inicio(){const L=items().sort((a,b)=>b.created-a.created).slice(0,4);return `
+<div class="hero"><div class="w"><div><h1>Outlet y devoluciones con hasta 50% de descuento</h1><p>Productos revisados y clasificados por estado. Elegís el grado y pagás menos, con garantía.</p><a class="btn" href="#publicaciones">Ver publicaciones</a> <a class="btn o" style="color:#fff;border-color:#fff6" href="#registro">Quiero vender</a></div><div class="big" aria-hidden="true">📦</div></div></div>
+<section><div class="w">${needDb()}<div class="hd"><div><h2>Categorías</h2></div></div><div class="cats">${CATS.map(c=>`<a class="cat" href="#publicaciones" data-cat="${c[0]}"><span>${c[1]}</span>${c[0]}</a>`).join('')}</div></div></section>
+<section style="padding-top:0"><div class="w"><div class="hd"><div><h2>Últimas publicaciones</h2><p>Lo más nuevo de nuestros vendedores.</p></div><a class="btn o s" href="#publicaciones">Ver todas</a></div>${L.length?`<div class="grid">${L.map(card).join('')}</div>`:`<div class="box emp">Todavía no hay publicaciones. ¡Sé el primero en vender!</div>`}</div></section>
+<section style="padding-top:0"><div class="w"><div class="hd"><h2>Cómo clasificamos el estado</h2></div><div class="val">${Object.entries(G).map(([g,n])=>`<div class="box"><span class="bd ${g}">Grado ${g}</span><h3 style="margin:10px 0 4px">${n}</h3><p class="mu" style="margin:0">${{A:'Sin uso visible, funciona como nuevo.',B:'Marcas leves, accesorios incluidos.',C:'Producto nuevo con empaque abierto.'}[g]}</p></div>`).join('')}</div></div></section>`},
+
+publicaciones(){let r=items().filter(x=>(!S.cat||x.cat===S.cat)&&(!S.gr||x.grade===S.gr)&&(x.title+' '+x.desc).toLowerCase().includes(S.q.toLowerCase()));
+r.sort((a,b)=>S.sort==='asc'?a.price-b.price:S.sort==='desc'?b.price-a.price:b.created-a.created);
+return `<section><div class="w"><div class="hd"><div><h2>Publicaciones</h2><p>${r.length} productos</p></div></div><div class="lay"><aside class="box"><label class="f">Categoría<select id="fc"><option value="">Todas</option>${CATS.map(c=>`<option ${S.cat===c[0]?'selected':''}>${c[0]}</option>`).join('')}</select></label><label class="f">Estado<select id="fg"><option value="">Todos</option>${Object.entries(G).map(([g,n])=>`<option value="${g}" ${S.gr===g?'selected':''}>Grado ${g} · ${n}</option>`).join('')}</select></label><label class="f">Ordenar<select id="fo"><option value="new">Más nuevos</option><option value="asc" ${S.sort==='asc'?'selected':''}>Menor precio</option><option value="desc" ${S.sort==='desc'?'selected':''}>Mayor precio</option></select></label><button class="btn o s" id="fx">Limpiar</button></aside>${r.length?`<div class="grid">${r.map(card).join('')}</div>`:'<div class="emp">No hay publicaciones con esos filtros.</div>'}</div></div></section>`},
+
+producto(){const x=items().find(i=>i.sid+'|'+i.id===S.sel);if(!x)return `<section><div class="w emp">Producto no encontrado. <a href="#publicaciones">Volver al listado</a></div></section>`;
+return `<section><div class="w"><a href="#publicaciones">← Volver</a><div class="two box" style="margin-top:12px"><div class="big" style="transform:none;background:var(--bg)">${x.emoji||emo(x.cat)}</div><div><span class="bd ${x.grade}">Grado ${x.grade} · ${G[x.grade]}</span><h2 style="font-size:34px;margin:10px 0">${esc(x.title)}</h2><div class="pr" style="font-size:36px">${fmt(x.price)}</div><p>${esc(x.desc)||'Sin descripción.'}</p><p class="mu">Vendedor: ${esc(x.seller)} · Stock: ${x.stock}</p>${x.stock>0?`<button class="btn" id="buy">Comprar ahora</button>`:'<b>Sin stock</b>'}</div></div></div></section>`},
+
+nosotros(){return `<section><div class="w"><div class="hd"><h2>Quiénes somos</h2></div><div class="two"><div class="box"><h3>Misión</h3><p>Dar una segunda vida a productos de calidad, conectando a quienes quieren vender con quienes buscan pagar menos, con reglas claras de estado y garantía.</p></div><div class="box"><h3>Visión</h3><p>Ser el mercado de outlet y devoluciones de referencia en Uruguay, donde comprar productos reacondicionados sea la primera opción.</p></div></div><div class="hd" style="margin-top:34px"><h2>Nuestros valores</h2></div><div class="val"><div class="box"><h3>Transparencia</h3><p class="mu">Cada producto indica su estado real.</p></div><div class="box"><h3>Confianza</h3><p class="mu">Garantía y devolución en cada compra.</p></div><div class="box"><h3>Sustentabilidad</h3><p class="mu">Alargar la vida útil reduce residuos.</p></div></div></div></section>`},
+
+registro(){const p=S.profile||{};return `<section><div class="w" style="max-width:620px"><div class="box"><h2>${S.profile?'Tu cuenta':'Crear cuenta'}</h2><p class="mu">Tus datos quedan guardados en la base de datos de la página.</p>${needDb()}<form id="rf"><label class="f">Nombre o tienda<input name="name" required value="${esc(p.name)}"></label><div class="row"><label class="f">Teléfono<input name="phone" value="${esc(p.phone)}"></label><label class="f">Ciudad<input name="city" value="${esc(p.city)}"></label></div><label class="f">Quiero usar la app como<select name="role">${['comprador','vendedor','ambos'].map(r=>`<option ${p.role===r?'selected':''}>${r}</option>`).join('')}</select></label><button class="btn">${S.profile?'Guardar cambios':'Registrarme'}</button></form></div></div></section>`},
+
+perfil(){const g=gate();if(g)return `<section><div class="w">${g}</div></section>`;const p=S.profile;return `<section><div class="w two"><div class="box"><h2>Mi perfil</h2><p><b>${esc(p.name)}</b><br><span class="mu">Rol: ${esc(p.role)} · ${esc(p.city)||'Sin ciudad'} · ${esc(p.phone)||'Sin teléfono'}</span></p><a class="btn o s" href="#registro">Editar perfil</a></div><div class="box"><h3>Respaldo de tus datos</h3><p class="mu">Descargá una copia de tu perfil, compras y publicaciones. Si algún día se pierden, las restaurás desde el archivo.</p><button class="btn d s" id="bk">Descargar respaldo</button> <label class="btn o s" style="cursor:pointer">Restaurar<input type="file" id="rs" accept=".json" hidden></label></div></div></section>`},
+
+compras(){const g=gate();if(g)return `<section><div class="w">${g}</div></section>`;return `<section><div class="w"><div class="hd"><h2>Mis compras</h2></div><div class="box">${S.orders.length?S.orders.slice().reverse().map(o=>`<div class="li"><div class="t">${o.emoji}</div><div class="x"><b>${esc(o.title)}</b><br><span class="mu">Grado ${o.grade} · ${esc(o.seller)} · ${new Date(o.date).toLocaleDateString('es-UY')}</span></div><b>${fmt(o.price)}</b><span class="bd A">Confirmada</span></div>`).join(''):'<div class="emp">Aún no hiciste compras. <a href="#publicaciones">Explorar productos</a></div>'}</div></div></section>`},
+
+vendedor(){const g=gate();if(g)return `<section><div class="w">${g}</div></section>`;if(!isSeller())return `<section><div class="w"><div class="box emp"><h2>Tu cuenta es de comprador</h2><p>Cambiá tu rol a vendedor para publicar.</p><a class="btn" href="#registro">Cambiar rol</a></div></div></section>`;
+const e=S.edit===null?null:(S.edit==='new'?{}:S.mine.find(i=>i.id===S.edit))||{};
+return `<section><div class="w"><div class="hd"><div><h2>Mis publicaciones</h2><p>${S.mine.length} publicados</p></div><button class="btn" id="nw">+ Nueva publicación</button></div>
+${e?`<div class="box" style="margin-bottom:18px"><h3>${e.id?'Editar':'Nueva'} publicación</h3><form id="pf" style="margin-top:12px"><label class="f">Título<input name="title" required value="${esc(e.title)}"></label><label class="f">Descripción<textarea name="desc" rows="3">${esc(e.desc)}</textarea></label><div class="row"><label class="f">Precio ($U)<input name="price" type="number" min="1" required value="${e.price||''}"></label><label class="f">Stock<input name="stock" type="number" min="0" required value="${e.stock??1}"></label></div><div class="row"><label class="f">Categoría<select name="cat">${CATS.map(c=>`<option ${e.cat===c[0]?'selected':''}>${c[0]}</option>`).join('')}</select></label><label class="f">Estado<select name="grade">${Object.entries(G).map(([k,n])=>`<option value="${k}" ${e.grade===k?'selected':''}>Grado ${k} · ${n}</option>`).join('')}</select></label></div><button class="btn">Guardar</button> <button type="button" class="btn o" id="cx">Cancelar</button></form></div>`:''}
+<div class="box">${S.mine.length?S.mine.map(i=>`<div class="li"><div class="t">${emo(i.cat)}</div><div class="x"><b>${esc(i.title)}</b> <span class="bd ${i.grade}">Grado ${i.grade}</span><br><span class="mu">${fmt(i.price)} · Stock ${i.stock} · ${i.status==='pausado'?'Pausada':'Activa'}</span></div><button class="btn o s" data-ed="${i.id}">Editar</button><button class="btn o s" data-ps="${i.id}">${i.status==='pausado'?'Activar':'Pausar'}</button><button class="btn o s" data-dl="${i.id}">Eliminar</button></div>`).join(''):'<div class="emp">Todavía no publicaste nada.</div>'}</div></div></section>`}
+};
+
+/* ===== Router y render ===== */
+function route(){return (location.hash.slice(1)||'inicio')}
+function render(){let r=route();if(!Pages[r])r='inicio';
+$('#app').innerHTML=Pages[r]();
+const nav=[['inicio','Inicio'],['publicaciones','Publicaciones'],['nosotros','Misión y visión']];
+if(!S.profile)nav.push(['registro','Registrarme']);else{if(isBuyer())nav.push(['compras','Mis compras']);if(isSeller())nav.push(['vendedor','Vendedor']);nav.push(['perfil',esc(S.profile.name)])}
+$('#nav').innerHTML=nav.map(n=>`<a href="#${n[0]}" class="${r===n[0]?'on':''}">${n[1]}</a>`).join('');bind()}
+window.addEventListener('hashchange',()=>{scrollTo(0,0);render()});
+$('#sf').onsubmit=e=>{e.preventDefault();S.q=$('#q').value;location.hash='publicaciones';render()};
+
+function bind(){const a=$('#app');
+a.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{S.sel=b.dataset.open;location.hash='producto'});
+a.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{S.cat=b.dataset.cat});
+const on=(id,ev,f)=>{const el=$(id);if(el)el[ev]=f};
+on('#fc','onchange',e=>{S.cat=e.target.value;render()});on('#fg','onchange',e=>{S.gr=e.target.value;render()});on('#fo','onchange',e=>{S.sort=e.target.value;render()});
+on('#fx','onclick',()=>{S.cat=S.gr='';S.q='';S.sort='new';$('#q').value='';render()});
+on('#rf','onsubmit',async e=>{e.preventDefault();if(!db)return toast('Necesitás abrir la página con tu cuenta de Claude');const f=Object.fromEntries(new FormData(e.target));await saveProfile({...S.profile,...f,created:S.profile?.created||Date.now()});location.hash=f.role==='comprador'?'compras':'vendedor'});
+on('#buy','onclick',async()=>{if(!S.profile)return location.hash='registro';if(!isBuyer())return toast('Tu cuenta es de vendedor. Cambiá el rol para comprar.');const x=items().find(i=>i.sid+'|'+i.id===S.sel);
+await guard(async()=>{await saveOrders([...S.orders,{id:'o'+Date.now(),title:x.title,price:x.price,grade:x.grade,seller:x.seller,emoji:x.emoji||emo(x.cat),date:Date.now()}]);toast('Compra confirmada');location.hash='compras'})});
+on('#nw','onclick',()=>{S.edit='new';render()});on('#cx','onclick',()=>{S.edit=null;render()});
+on('#pf','onsubmit',async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));const it={...f,price:+f.price,stock:+f.stock};
+const cur=S.edit==='new'?null:S.mine.find(i=>i.id===S.edit);const arr=cur?S.mine.map(i=>i.id===cur.id?{...i,...it}:i):[...S.mine,{...it,id:'i'+Date.now(),created:Date.now(),status:'activo'}];S.edit=null;await saveItems(arr)});
+a.querySelectorAll('[data-ed]').forEach(b=>b.onclick=()=>{S.edit=b.dataset.ed;render()});
+a.querySelectorAll('[data-ps]').forEach(b=>b.onclick=()=>saveItems(S.mine.map(i=>i.id===b.dataset.ps?{...i,status:i.status==='pausado'?'activo':'pausado'}:i)));
+a.querySelectorAll('[data-dl]').forEach(b=>b.onclick=()=>{if(confirm('¿Eliminar esta publicación? No se puede deshacer.'))saveItems(S.mine.filter(i=>i.id!==b.dataset.dl))});
+on('#bk','onclick',async()=>{if(!dl)return toast('Descarga no disponible aquí');const data=JSON.stringify({v:1,profile:S.profile,orders:S.orders,items:S.mine},null,1);try{await dl.save({filename:'openbox-respaldo-'+new Date().toISOString().slice(0,10)+'.json',data})}catch(e){toast('Descarga cancelada')}});
+on('#rs','onchange',async e=>{const f=e.target.files[0];if(!f)return;if(!confirm('Esto reemplaza tus datos actuales con el respaldo. ¿Continuar?'))return;await guard(async()=>{const d=JSON.parse(await f.text());if(d.profile)await saveProfile(d.profile);await saveOrders(d.orders||[]);if(d.items)await db.doc('listings/'+uid).set({seller:d.profile?.name||S.profile.name,items:d.items});toast('Datos restaurados')})})}
+
+/* ===== Conexión a la base de datos ===== */
+(async()=>{render();
+try{const c=window.claude;const lim=p=>Promise.race([p,new Promise(r=>setTimeout(()=>r(null),10000))]);
+if(c){db=await lim(c.use('db'));const u=await lim(c.use('user'));uid=u?await u.id():null;dl=await lim(c.use('downloads'))}}catch(e){}
+if(!db||!uid){S.offline=true;S.ready=true;render();return}
+db.collection('listings').onSnapshot(s=>{S.all=s.docs.map(d=>({uid:d.id,...d.data()}));const m=S.all.find(d=>d.uid===uid);S.mine=(m&&m.items)||[];render()},()=>{});
+db.doc('data/users/'+uid+'/profile').onSnapshot(s=>{S.profile=s.exists?s.data():null;S.ready=true;render()},()=>{S.ready=true;render()});
+db.doc('data/users/'+uid+'/orders').onSnapshot(s=>{S.orders=(s.exists&&s.data().list)||[];render()},()=>{});
+})();
+</script>
+</body>
+</html>
